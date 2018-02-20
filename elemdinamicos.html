@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		h3 {
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>On Bind</h1>
+		<hr>
+		<h3>CLick me!!!</h3>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		 (()=>{
+		 	var i =0;
+
+		 	$('body').on('click','h3',()=>{
+		 		i++;
+		 		var h3Dinamico = '<h3 id="id-'+i+'">Dinamico '+i+'</h3>';
+		 		//$('body').append(h3Dinamico);
+		 		$('.container').append(h3Dinamico);
+		 		
+		 		if(i===2){ 
+		 				$('#id-2').bind('click',()=>{
+		 					alert('okkk');
+		 				});
+		 		}
+		 	});
+
+		 })();
+	</script>
+</body>
+</html>

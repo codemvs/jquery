@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		dl {
+			width: 600px;
+		}
+		dd {
+			margin: 0;
+			padding: 10px;			
+		}
+		dt {
+			cursor: pointer;
+			font-size: 18px;
+			background-color: #e3e3e3;
+			border-bottom:1px solid #c5c5c5;
+			border-top:1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div align="center">
+			<dl>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+				<dt>Titulo acordeon</dt>
+				<dd>Cuerpo</dd>
+			</dl>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		 (()=>{
+		 	var dds= $('dd');
+		 	dds.hide(); //ocultar todos los steps
+		 	dds.eq(0).show(); //mostrar el primer elemento
+
+		 	//cuando el mouse pase a la lista de detalles
+		 	$('dt').on('mouseenter', function(){
+
+		 		dds.slideUp(200);
+		 		//busca el elemento hermano
+		 		$(this)
+		 			.next()
+		 			.slideDown(200);
+		 	});
+
+		 })();
+	</script>
+</body>
+</html>

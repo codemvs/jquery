@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.textoVerde {
+			color:green;
+			font-weight: bold;
+		}
+		.textoRojo {
+			color:red;
+		}
+		img {
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Leccion 1</h1>
+			<hr>
+
+		<div class="col-sm-4 text-center">
+			<img src="http://i1.mendozapost.com/files/image/7/7142/54b6f4c45797b_1420_!.jpg?s=270345070aa93e05e936c1b6f31c0904&d=1421508947" alt="">
+			<h4>Salvador Morales</h4>
+		</div>
+		<div class="col-sm-5">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus neque beatae aspernatur, exercitationem necessitatibus ullam, totam. Itaque similique maiores possimus eius temporibus eos, voluptas illum qui, voluptatem doloremque enim quod!
+			</p>
+
+		</div>
+		<div class="col-sm-3">
+			<ul>
+				<li>Hola1</li>
+				<li>Hola2</li>
+				<li>Hola3</li>
+				<li>Hola4</li>
+			</ul>
+			<ul>
+				<li> <span class="label label-primary"> Negrito1 </span> </li>
+				<li>Negrito2</li>
+				<li>Negrito3</li>
+				<li>Negrito4</li>
+			</ul>
+		</div>
+			
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(()=>{
+			//primer elemento
+			$('li:first-child').addClass('textoVerde');	
+			//ultimo elemento
+			$('li:last-child').addClass('textoRojo');
+
+			//cambiar atributo de imagen
+			// $('img').attr('src','http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg')
+			// 		.removeClass('img-circle')
+			// 		.addClass('img-thumbnail');
+			$('img').attr('src','http://www.radiozero.cl/static/2018/01/rtx1ssef-e1517337287979-400x400.jpg')
+					.addClass('img-circle img-thumbnail');
+			//children modigicaciones al segundo bloque
+			$('.col-sm-5')
+						.find('p')
+						// .text('Saludos <i>soy yo</i>.');
+						.html('Saludos <i>soy yo</i>.');
+			// Preferencia a la lista ordenada
+			$('ul li')
+				.eq(0).css('color','green').end()
+				.eq(1).css('color','pink').end()
+				.eq(2).css('color','brown').end()
+				.eq(3).css('color','yellow').end()
+				.eq(4).css('color','red').end();
+				
+		});// end
+	</script>
+</body>
+</html>

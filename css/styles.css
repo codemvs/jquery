@@ -1,0 +1,15 @@
+.textoVerde {
+			color:green;
+			font-weight: bold;
+		}
+		.textoRojo {
+			color:red;
+		}
+		img {
+			width: 200px;
+			height: 200px;
+		}
+		.img100{
+			width: 100px;
+			height: 100px;
+		}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button id="btnAdd" type="button" class="btn btn-primary">Agregar</button>
+		<hr>
+		<select name="opcion" id="opcion">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Base</th>
+					<th>x</th>
+					<th>Numero</th>
+					<th>=</th>
+					<th>Resultado</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		 (()=>{
+
+		 	var base=3,numero=1,resultado=0;
+		 	 
+		 	 
+		 	$('#btnAdd').on('click',()=>{	
+		 		base = Number($('#opcion').val());	
+		 		resultado= base*numero;
+		 		var html = '<tr>'+
+		 						'<td>'+base+'</td><td>*</td>'+
+		 						'<td>'+numero+'</td><td>=</td>'+
+		 						'<td>'+resultado+'</td>'+
+		 					'</tr>';
+		 		$('.table').find('tbody').append(html);
+		 		numero++;
+		 	});
+		 	$('#opcion').on('change',function() {
+		 		//eliminar todos menos la primera
+		 		$('tr').not(":eq(0)").remove();
+		 		numero=0;
+		 	});
+		 })();
+	</script>
+</body>
+</html>

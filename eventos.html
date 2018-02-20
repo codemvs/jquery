@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		
+		<h1>Eventos</h1>
+		<hr>
+	
+		<button id="btnClick" class="btn btn-primary">Evento click</button>
+		<br><br>
+		<img src="http://yucatanalamano.com/wp-content/uploads/2017/05/cdn.expansion.mx_-97.jpg" class="img100">
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(()=>{
+			
+			$('#btnClick').on('click',()=>{
+				alert('ok');
+			});
+
+			$('.img100').mouseenter(function(){
+				$(this).attr('src','https://cdn-pro.elsalvador.com/wp-content/uploads/2017/01/30182002/1476896384419.jpg');
+			});
+
+			$('.img100').mouseleave(function(){
+				$(this).attr('src','http://yucatanalamano.com/wp-content/uploads/2017/05/cdn.expansion.mx_-97.jpg');
+			});
+		});// end
+	</script>
+</body>
+</html>
