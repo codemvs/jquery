@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <!-- Librería de jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <script>
+      // function JSON_Reader( archivo ){
+      //   //contiene una promesa
+      //   var d = new $.Deferred();
+      //   $.ajax({
+      //     url:'assets/data/'+archivo+'.json',
+      //     dataType:'json',
+      //     success:function(data){
+      //       d.resolve(data);
+      //     },
+      //     error:function(){
+      //       d.reject();
+      //     }
+      //   });
+      //   return d.promise();
+      // }
+      // var resultado = JSON_Reader('2');
+      // resultado.done(function(data){
+      //   console.log(data);
+      // })
+      // .fail(function(){
+      //   console.log('El archivo no existe.');
+      // });
+
+      var App = App || {
+        init: function(){
+          var url='assets/1.json',
+              data=null,
+              metod='GET';
+              
+               App.ajaxPost(url,data,metod).done(function(res){
+                 console.log(res);
+               })
+               .fail(function(err){
+                 console.log(err);
+               });
+
+              // pet.
+
+        },
+        // Retorna una promesa
+        ajaxPost:function(url,data,metod){
+          var $d = $.Deferred();
+          $.ajax({
+                type: metod,
+                url: url,
+                dataType:'json',
+                headers: {
+                //     "Ocp-Apim-Subscription-Key":"7049d6ee2e974d7b958f8255d60c62ca",
+                    "Content-Type":"application/json"
+                },
+                data:data
+            }).done(function(resp) {
+              $d.resolve(resp);
+            }).fail(function(error){
+              $d.reject(error);
+            });
+            return $d.promise();
+        }
+      }
+
+      App.init();
+    </script>
+
+  </body>
+</html>
